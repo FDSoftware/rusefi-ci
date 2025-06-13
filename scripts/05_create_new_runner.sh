@@ -3,6 +3,10 @@
 LABEL=${2:-"ubuntu-latest"}
 IMAGE_HASH=$(docker image inspect rusefi-ci --format "{{.Id}}" 2>/dev/null)
 
+echo "selected target:"
+echo $RUNNER_NAME
+echo "----"
+
 read -p "Enter the rusEFI board serial ID: " HARDWARE_CI_SERIAL
 read -p "Enter the STLink ID: " HARDWARE_CI_STLINK_SERIAL
 read -p "Enter the CI VBATT: " HARDWARE_CI_VBATT
